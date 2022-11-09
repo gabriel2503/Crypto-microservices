@@ -1,0 +1,37 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Create Element</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Comprar Cryptomoeda</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Position</mat-label>
+    <input matInput [(ngModel)]="data.position">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Codigo</mat-label>
+    <input matInput [(ngModel)]="data.codigo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.nome">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>cotacao_compra</mat-label>
+    <input matInput [(ngModel)]="data.cotacao_compra">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>cotacao_venda</mat-label>
+    <input matInput [(ngModel)]="data.cotacao_venda">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>variacao</mat-label>
+    <input matInput [(ngModel)]="data.variacao">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>quantidade</mat-label>
+    <input matInput [(ngModel)]="data.quantidade">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+  <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Comprar</button>
+</div>
